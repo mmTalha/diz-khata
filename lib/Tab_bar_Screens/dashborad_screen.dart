@@ -20,7 +20,7 @@ class _homeState extends State<home> {
     // home_screen1(),
     // SignIn(),
     // aboutus(),
-    Khata_Screen(),
+    khata_main(),
     Cash_Book_Screen(),
     Reconsile_Screen(),
     Profile_screen(),
@@ -43,7 +43,7 @@ class _homeState extends State<home> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTappedBar,
         currentIndex: _currentIndex,
-         backgroundColor:  Color.fromRGBO(230, 231, 232,10  ) ,
+        backgroundColor:  Color.fromRGBO(230, 231, 232,10  ) ,
         selectedItemColor: Colors.black ,
         unselectedItemColor: Colors.black.withOpacity(.60),
         selectedFontSize: 10,
@@ -51,8 +51,8 @@ class _homeState extends State<home> {
 
         items: [
           BottomNavigationBarItem(
-              icon:Image.asset( 'assets/khata.png',height: 15) ,
-              title: Text(  'Khata' ),
+            icon:Image.asset( 'assets/khata.png',height: 10) ,
+            title: Text(  'Khata' ),
 
           ),
           // BottomNavigationBarItem(
@@ -60,14 +60,15 @@ class _homeState extends State<home> {
           //     title: new Text("DemoHome")
           // ),
           BottomNavigationBarItem(
-              icon:  Image.asset( 'assets/Cashbook.png',height: 15),
-              title: Text(  'CashBook' ) ,      ),
+            icon:  Image.asset( 'assets/Cashbook.png',height: 10),
+            title: Text(  'CashBook' ) ,      ),
           BottomNavigationBarItem(
-              icon: Image.asset( 'assets/reconsile.png',height: 15),
-               title: Text(  'Reconsile' )
+
+              icon: Image.asset( 'assets/reconsile.png',height: 10),
+              title: Text(  'Reconsile' )
           ),
           BottomNavigationBarItem(
-              icon:  Image.asset( 'assets/profile.png',height: 15),
+              icon:  Image.asset( 'assets/profile.png',height: 10),
               title: Text(  'Account' )         ),
         ],
       ),

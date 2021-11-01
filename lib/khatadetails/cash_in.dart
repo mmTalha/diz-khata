@@ -113,11 +113,13 @@ class Cash_in extends StatelessWidget {
                 ),
                 Container(
                   padding: EdgeInsets.all(10),
-                  width: 100,
+                  width: 120,
                   margin: EdgeInsets.only(top: 10, bottom: 5),
                   height: 50,
                   child:
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Icon(
                         Icons.camera_alt,

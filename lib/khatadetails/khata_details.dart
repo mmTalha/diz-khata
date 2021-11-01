@@ -1,9 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_sms/flutter_sms.dart';
+import 'package:provider/provider.dart';
 import 'package:untitled1/hisaab_ka_parcha/apne_diye.dart';
 import 'package:untitled1/khatadetails/cash_in.dart';
 import 'package:untitled1/khatadetails/cash_out.dart';
 import 'package:untitled1/otp_screens/Enter_OTP_screen.dart';
+import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 
+import 'package:url_launcher/url_launcher.dart';
 
 
 
@@ -13,6 +18,7 @@ class khatadetails_screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -32,6 +38,7 @@ class khatadetails_screen extends StatelessWidget {
       ),
       body: Column(
         children: [
+
           Container(
             margin: EdgeInsets.all(10),
             height: 100,
@@ -49,6 +56,34 @@ class khatadetails_screen extends StatelessWidget {
             decoration: BoxDecoration(
                 color:Color.fromRGBO(94, 211, 118, 190)  ,
                 borderRadius: BorderRadius.circular(15)),
+          ),
+          Container(
+            child:Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(onPressed:  ()async{
+
+                    final link = WhatsAppUnilink(
+                      phoneNumber: '+001-(555)1234567',
+                      text: "Hey! I'm inquiring about the apartment listing",
+                    );
+                    await launch('$link');
+
+                }, icon:  Image.asset( 'assets/whatsapp.jpg')  ),
+                IconButton(onPressed:  ()async{
+
+
+                    var _result = (await sendSMS(
+                        message: 'apny ghabrana nahi hai',
+                        recipients: ['03132374807']).catchError((onError) {
+                      print(onError);
+                    }));
+                    print(_result);
+
+                }, icon: Icon(CupertinoIcons. mail   )),
+                // IconButton(onPressed:  (){}, icon: Icon(CupertinoIcons.add   )),
+              ],
+            ) ,
           ),
           GestureDetector(
             onTap: (){
